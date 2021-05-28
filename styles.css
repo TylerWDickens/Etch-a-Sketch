@@ -1,0 +1,32 @@
+.container-fluid{
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.title h1{
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  align-content: center;
+  border-color: darkviolet;
+  border-width: 5px;
+  border-style: solid; width: 175px;
+ 
+}
+
+.grid-item{
+  display: grid;
+  border-color: darkslategray;
+  border-width: 1px;
+  border-style: solid;
+  width: 30px;
+  height: 30px;
+  padding-left: 0;
+  
+}
