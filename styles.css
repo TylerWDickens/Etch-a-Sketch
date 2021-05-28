@@ -1,3 +1,4 @@
+
 .container-fluid{
   height: 100vh;
   width: 100vw;
@@ -9,7 +10,7 @@
   justify-content: center;
   width: 100vw;
 }
-
+/*
 .grid-container{
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -29,4 +30,17 @@
   height: 30px;
   padding-left: 0;
   
+}*/
+
+.grid {
+  display: grid;
+  max-width: 500px;
+  min-height: 500px;
+  margin: 2rem auto;
+  border: 2px solid darkslategray;
+}
+
+.grid-element {
+  border: 1px solid darkslategray;
+  background-color: darkslategray;
 }
