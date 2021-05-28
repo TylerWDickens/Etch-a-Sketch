@@ -48,10 +48,11 @@ function changeSize() {
     if (newSize < 1 || newSize > 100 || Number.isNaN(newSize)) {
       alert("Enter a number from 1-100 range");
       changeSize();
-    } else {
+    } else{
       clearGrid();
       gridSize(newSize);
       createGrid(newSize);
+      gridBorder(newSize);
     };
   };
 };
@@ -69,3 +70,15 @@ function resetGrid(){
     element.style.backgroundColor = "white";
   })
 }
+
+function gridBorder(size){
+  if(size>=50){
+    const gridArray = Array.from(gridContainer.childNodes);
+    gridArray.forEach((element) => {
+      element.style.borderStyle = "none";
+    })}else{
+      const gridArray = Array.from(gridContainer.childNodes);
+    gridArray.forEach((element) => {
+      element.style.borderStyle = "solid";
+    })}
+  }
