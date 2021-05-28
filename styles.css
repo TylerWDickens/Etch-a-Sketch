@@ -9,28 +9,21 @@
   display: flex;
   justify-content: center;
   width: 100vw;
-}
-/*
-.grid-container{
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  align-content: center;
-  border-color: darkviolet;
-  border-width: 5px;
-  border-style: solid; width: 175px;
- 
+  height: 3rem;
 }
 
-.grid-item{
-  display: grid;
-  border-color: darkslategray;
-  border-width: 1px;
-  border-style: solid;
-  width: 30px;
-  height: 30px;
-  padding-left: 0;
-  
-}*/
+button{
+  justify-content: center;
+  padding: 5px;
+  transition: 0.3s;
+  background-color: beige;
+}
+
+button:hover{
+  background-color: #292b2c;
+  color: whitesmoke;
+
+}
 
 .grid {
   display: grid;
@@ -42,5 +35,5 @@
 
 .grid-element {
   border: 1px solid darkslategray;
-  background-color: darkslategray;
+  background-color: white;
 }

@@ -1,25 +1,27 @@
 //Use query selectors to set grid container and button to const
 const gridContainer = document.querySelector('#grid-container');
-const resetButton = document.querySelector("#reset.button");
+const resizeButton = document.querySelector("#change-button");
+const resetButton = document.querySelector("#reset-button");
 
 //run setDefaultGrid on loading page
 window.addEventListener("load", setDefaultGrid);
 //run changeSize when you click the button
-resetButton.addEventListener("click", changeSize);
+resizeButton.addEventListener("click", changeSize);
+resetButton.addEventListener("click", resetGrid);
 
 //run setGridSize and fillGrid - set default size to 16
 function setDefaultGrid(){
-  setGridSize(16);
-  fillGrid(16);
+  gridSize(16);
+  createGrid(16);
 }
 
 //set grid colomn size
-function setGridSize(size){
+function gridSize(size){
   gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
 }
 
 //
-function fillGrid(size){
+function createGrid(size){
   //for each element, create a div and give class
   //add event listener for "mouseover" which triggers a colour 
   //change fucntion, then append the element to the grid container
@@ -38,28 +40,32 @@ function changeColor(e){
   e.target.style.backgroundColor = `rgb(${red},${green}, ${blue})`;
 }
 
-function changeSize(){
-  let newSize = prompt("Enter a grid size");
+function changeSize() {
+  let newSize = prompt("Enter new size");
 
-  if(newSize !== null) {
+  if (newSize !== null) {
     newSize = parseInt(newSize);
-
-    if (newSize < 1 || newSize > 64 || Number.isNaN(newSize)){
-      alert("Enter a number from 1-64");
+    if (newSize < 1 || newSize > 100 || Number.isNaN(newSize)) {
+      alert("Enter a number from 1-100 range");
       changeSize();
-    }else{
+    } else {
       clearGrid();
-      setGridSize(newSize);
-      fillGrid(newSize);
-    }
-  }
-}
+      gridSize(newSize);
+      createGrid(newSize);
+    };
+  };
+};
 
-function clearGrid(){
-
+function clearGrid() {
   const gridArray = Array.from(gridContainer.childNodes);
   gridArray.forEach((element) => {
     gridContainer.removeChild(element);
+  });
+};
 
+function resetGrid(){
+  const gridArray = Array.from(gridContainer.childNodes);
+  gridArray.forEach((element) => {
+    element.style.backgroundColor = "white";
   })
 }
