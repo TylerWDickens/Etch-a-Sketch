@@ -34,11 +34,15 @@ function createGrid(size){
 }
 
 function changeColor(e){
+  
   const red = Math.floor(Math.random() * 256);
   const green = Math.floor(Math.random() * 256);
   const blue = Math.floor(Math.random() * 256);
   e.target.style.backgroundColor = `rgb(${red},${green}, ${blue})`;
-}
+  
+};
+
+
 
 function changeSize() {
   let newSize = prompt("Enter new size");
